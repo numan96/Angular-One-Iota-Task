@@ -3,7 +3,13 @@
 describing any design decisions you made, and
 the steps you took to build the application.
 
-`https://ng-numan-oneiota-task.web.app/`
+https://ng-numan-oneiota-task.web.app/
+
+## Third Party Dependencies Used
+
+- Angularfire for Deployment/Hosting Only - https://github.com/angular/angularfire
+- Angular Material for UI components - https://material.angular.io/
+- Angular Flex-Layout for UI layout - https://github.com/angular/flex-layout
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
