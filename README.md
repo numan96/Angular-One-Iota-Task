@@ -3,6 +3,8 @@
 describing any design decisions you made, and
 the steps you took to build the application.
 
+describe initially going through the skeleton of the appl before design layout, fetching the data first and showing it.
+
 https://ng-numan-oneiota-task.web.app/
 
 ## Third Party Dependencies Used
