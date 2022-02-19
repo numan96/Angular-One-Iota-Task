@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <span routerLink="" class="logo-text">One Iota</span>
+  <span class="spacer"></span>
+
+  <button routerLink="/cart" mat-icon-button aria-label="shopping cart button">
+    <mat-icon matBadgeColor="warn" [matBadge]="productsInCart"
+      >shopping_cart</mat-icon
+    >
+  </button>
+</mat-toolbar>

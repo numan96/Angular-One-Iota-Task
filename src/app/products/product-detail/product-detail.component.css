@@ -1,0 +1,17 @@
+.productImg {
+  width: 50%;
+  height: 50%;
+}
+
+.btn {
+  margin: 2%;
+}
+
+.padding-30 {
+  padding: 30px;
+}
+
+.price {
+  font-weight: bolder;
+  font-size: large;
+}

@@ -1,0 +1,70 @@
+<div>
+  <button
+    class="btn"
+    mat-fab
+    color="primary"
+    aria-label="Back Button"
+    routerLink="/products"
+  >
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>
+
+<div
+  *ngFor="let product of currentProduct"
+  fxLayout="row wrap"
+  fxLayout.lt-md="column"
+  fxLayoutAlign="center center"
+>
+  <div fxLayout="column" fxLayoutAlign="center center" fxFlex="60">
+    <img class="productImg" src="{{ product.mainImage }}" />
+  </div>
+
+  <div class="padding-30" fxFlex="20" fxLayout="row wrap">
+    <h1>
+      <b>{{ product.name }}</b>
+    </h1>
+    <p>{{ product.description }}</p>
+
+    <form
+      [formGroup]="addProductForm"
+      (ngSubmit)="addToCart()"
+      fxLayoutGap="10px"
+      fxFlex.lt-md="100"
+      fxLayout.lt-md="column wrap"
+      fxLayoutAlign.lt-md="center center"
+    >
+      <p><b>Brand:</b> {{ product.brandName }}</p>
+      <p><b>Colour:</b> {{ product.colour }}</p>
+      <mat-form-field appearance="fill" color="accent">
+        <mat-label>Size</mat-label>
+        <mat-select formControlName="size">
+          <mat-option *ngFor="let size of product.sizes" [value]="size"
+            ><b>{{ size }}</b></mat-option
+          >
+        </mat-select></mat-form-field
+      >
+
+      <mat-form-field appearance="fill" color="accent">
+        <mat-label>Quantity</mat-label>
+        <input formControlName="quantity" matInput type="number" />
+      </mat-form-field>
+      <p>
+        <b>{{ product.stockStatus }}</b>
+      </p>
+      <p>SKU: {{ product.SKU }}</p>
+      <p class="price">
+        {{ product.price.amount | currency: product.price.currency }}
+      </p>
+
+      <button
+        type="submit"
+        mat-raised-button
+        color="accent"
+        [disabled]="!addProductForm.valid"
+      >
+        Add to Cart
+      </button>
+    </form>
+  </div>
+</div>

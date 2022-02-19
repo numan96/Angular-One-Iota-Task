@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ng-numan-oneiota-task": {
+      "hosting": {
+        "numanOneIota": [
+          "ng-numan-oneiota-task"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ng-numan-oneiota-task"
+  }
+}

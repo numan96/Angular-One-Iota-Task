@@ -1,0 +1,62 @@
+<button
+  class="btn"
+  mat-fab
+  color="primary"
+  aria-label="Back Button"
+  routerLink="/products"
+>
+  <mat-icon>arrow_back</mat-icon>
+</button>
+
+<div fxLayoutAlign="center center" fxLayoutGap="10px">
+  <h1><b>Cart</b></h1>
+</div>
+<div *ngIf="cartTotal > 0" fxLayoutAlign="center center" fxLayout="column">
+  <h1>Order Total: {{ cartTotal | currency: "GBP" }}</h1>
+</div>
+<div
+  class="cartEmpty"
+  *ngIf="cartProducts.length === 0"
+  fxLayoutAlign="center center"
+>
+  <p>Cart is empty.</p>
+</div>
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <mat-card
+    *ngFor="let product of cartProducts; let i = index"
+    class="cartProduct"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxFill.lt-sm="100%"
+  >
+    <mat-card-title>
+      <b>{{ product.name }}</b>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <p>SKU: {{ product.SKU }}</p></mat-card-subtitle
+    >
+    <img
+      mat-card-lg-image
+      src="{{ product.mainImage }}"
+      alt="Image of {{ product.name }}"
+    />
+    <mat-card-content>
+      <h2>
+        {{ product.price.amount | currency: product.price.currency }}
+      </h2>
+
+      <p><b>Colour:</b> {{ product.colour }}</p>
+      <p><b>Size:</b> {{ product.size }}</p>
+      <p><b>Qty:</b> {{ product.quantity }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-stroked-button
+        color="warn"
+        (click)="removeFromCart(product.id, product.size, product.quantity, i)"
+      >
+        Remove
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

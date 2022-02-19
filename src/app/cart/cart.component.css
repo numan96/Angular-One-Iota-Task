@@ -1,0 +1,15 @@
+.cartEmpty {
+  height: 600px;
+}
+
+.cartProduct {
+  padding: 2%;
+  margin: 1%;
+  min-width: 50%;
+  max-width: 50%;
+}
+
+.btn {
+  margin: 2%;
+  float: left;
+}

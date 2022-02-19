@@ -1,0 +1,46 @@
+<div
+  fxLayout="row wrap"
+  fxLayout.lt-sm="column"
+  fxLayoutAlign="flex-start"
+  fxLayoutGap="35px"
+>
+  <mat-card
+    fxLayout="column"
+    fxFlex="0 1 calc(33.3% - 45px)"
+    fxFlex.lt-md="0 1 calc(50% - 45px)"
+    fxFlex.lt-sm="100%"
+    fxLayoutAlign="center center"
+    class="productCard"
+    *ngFor="let products of productsList"
+    routerLink="{{ products.id }}"
+    (click)="
+      addToRecentlyViewed(
+        products.id,
+        products.name,
+        products.mainImage,
+        products.price
+      )
+    "
+  >
+    <mat-card-header>
+      <mat-card-title>{{ products.name }} </mat-card-title>
+
+      <mat-card-subtitle>{{
+        products.price.amount | currency: products.price.currency
+      }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-md-image
+      src="{{ products.mainImage }}"
+      alt="Image of {{ products.name }}"
+    />
+    <mat-card-content>
+      <p fxLayoutAlign="center center">Sizes Available</p>
+      <mat-chip-list aria-label="Sizes Available">
+        <mat-chip selected *ngFor="let sizes of products.sizes">{{
+          sizes
+        }}</mat-chip>
+      </mat-chip-list>
+    </mat-card-content>
+  </mat-card>
+</div>

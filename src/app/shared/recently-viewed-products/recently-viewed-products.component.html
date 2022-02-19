@@ -1,0 +1,42 @@
+<hr />
+
+<div
+  *ngIf="recentlyViewedProducts.length > 0"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="35px"
+>
+  <h1>Recently Viewed Products</h1>
+</div>
+
+<div
+  *ngFor="let recentProduct of recentlyViewedProducts"
+  class="padding-10"
+  fxLayout="row"
+  fxLayout.lt-sm="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="35px"
+  fxLayoutGap.lt-sm="10px"
+>
+  <mat-card
+    fxLayout="column"
+    fxFlex="0 1 calc(33.3% - 45px)"
+    fxFlex.lt-md="0 1 calc(50% - 45px)"
+    fxFlex.lt-sm="100%"
+    fxLayoutAlign="center center"
+  >
+    <mat-card-title>{{ recentProduct.name }}</mat-card-title>
+    <img
+      mat-card-xl-image
+      src="{{ recentProduct.mainImage }}"
+      alt="Image of {{ recentProduct.name }}"
+    />
+    <mat-card-content>
+      <p>
+        {{
+          recentProduct.price.amount | currency: recentProduct.price.currency
+        }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
