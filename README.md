@@ -34,7 +34,7 @@ It contains an array of shopping cart products, which are any products the user 
 ### Models
 Models allowed me to use strict type definitions and track errors more efficiently, one was created for Products coming from the API, Cart Products, Recently Viewed Products and Price to allow me to call the amount and currency keys from the Price Object.
 
-### Shared Components - Header and Recently Viewed Products
+### Header and Recently Viewed Products
 The header was created using an Angular Material toolbar which provided a link back to the homepage with the 'One Iota' text and it allowed navigation to the shopping cart page with the shopping cart icon button which also provided a dynamic number of how many products were present in the cart. The typescript file contained a number which is displayed in the template and updated to match the cartCount BehaviourSubject value via subscription from the service.
 
 The recently viewed products is a list of the recently viewed products with simple data shown such as the name and price of the products. The price used a Currency built in Pipe to show the price in the currency provided from the API. The typescript file contained a Recent Product array that was structured after the Recent Product model and this data was retrieved from the service (getRecentlyViewedProducts method) within the ngOnInit.
