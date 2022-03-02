@@ -11,6 +11,8 @@ https://ng-numan-oneiota-task.web.app/
 
 ## Requirements Given
 
+The task was to create a web application that displays products, similar to many ecommerce apps and websites.
+
 - Show a list of products
   - Display only the key details about each product
 - Click a product in the list to go to a single product details page
