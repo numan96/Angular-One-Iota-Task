@@ -9,6 +9,19 @@ https://ng-numan-oneiota-task.web.app/
 - Angular Material for UI components - https://material.angular.io/
 - Angular Flex-Layout for UI layout - https://github.com/angular/flex-layout
 
+## Requirements Given
+
+- Show a list of products
+  - Display only the key details about each product
+- Click a product in the list to go to a single product details page
+  - All details for that product should be included
+- Show a list of recently viewed products at the bottom of each page
+- Add products to a cart
+  - A separate basket page with a cart total and list of products
+  - A cart icon with a running count of the number of products
+
+**All requirements were implemented and feedback was all very positive.**
+
 ## Design Decisions and Building the Application
 
 ### Angular Material 
